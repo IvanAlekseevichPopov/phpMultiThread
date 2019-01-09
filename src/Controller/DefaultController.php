@@ -12,7 +12,7 @@ class DefaultController extends AbstractController
      */
     public function index()
     {
-        pcntl_fork();
+//        pcntl_fork();
 //        dump(pcntl_fork());
 
         return $this->render('default/index.html.twig', [

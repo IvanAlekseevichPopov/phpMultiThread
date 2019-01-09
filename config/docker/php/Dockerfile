@@ -15,8 +15,9 @@ RUN docker-php-ext-install \
     pdo_pgsql
 
 RUN pecl install -o -f \
-    swoole; \
-    rm -rf /tmp/pear; \
+    swoole && \
+    rm -rf /tmp/pear &&  \
+    docker-php-ext-install pcntl && \
     docker-php-ext-enable swoole
 
 ENV COMPOSER_ALLOW_SUPERUSER 1
