@@ -1,0 +1,20 @@
+<?php
+
+namespace App\Model;
+
+class Task extends \Threaded {
+
+    public function __construct($greeting) {
+        $this->greeting = $greeting;
+    }
+
+    public function run()   {
+        sleep(1);
+        /* note that this will be loaded by composers autoloader */
+        $greeting = new Autoloadable($this->greeting);
+        printf(
+            "%s\n", $greeting);
+    }
+
+    protected $greeting;
+}

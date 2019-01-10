@@ -16,22 +16,13 @@ services:
             - PARENT_USER_ID
         volumes:
             - .:/var/www/html
-        expose:
-            - "9000"
-        entrypoint: ./config/docker/php-zts/docker-entrypoint.sh
+        working_dir: /var/www/html
     nginx:
         image: 4xxi/nginx:flex
         ports:
             - "80:80"
         volumes:
             - .:/var/www/html
-    nginx-zts:
-        image: 4xxi/nginx:flex
-        ports:
-            - "8080:80"
-        volumes:
-            - .:/var/www/html
-            - ./config/docker/nginx/upstream.conf:/etc/nginx/conf.d/upstream.conf
     db:
         image: postgres:9
         ports:
