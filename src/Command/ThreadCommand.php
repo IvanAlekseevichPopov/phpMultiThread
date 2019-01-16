@@ -35,6 +35,7 @@ class ThreadCommand extends Command
 //
 //        $thread->start() && $thread->join();
 
+
         $pool = new \Pool(4, Autoloader::class, ["vendor/autoload.php"]);
         /* submit a task to the pool */
         $pool->submit(new Task("Hello World!"));

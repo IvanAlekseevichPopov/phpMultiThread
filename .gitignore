@@ -1,11 +1,11 @@
 .idea
 
 ###> symfony/framework-bundle ###
-/.env.local
+.env
 /.env.*.local
 /public/bundles/
-/var/
-/vendor/
+var/
+vendor/
 ###< symfony/framework-bundle ###
 
 ###> friendsofphp/php-cs-fixer ###
